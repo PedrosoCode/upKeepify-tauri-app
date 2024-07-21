@@ -1,10 +1,9 @@
 {
   "build": {
-    "beforeDevCommand": "trunk serve",
-    "beforeBuildCommand": "trunk build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
-    "withGlobalTauri": true
+    "beforeBuildCommand": "wasm-pack build --target web",
+    "beforeDevCommand": "wasm-pack build --target web",
+    "devPath": "./pkg",
+    "distDir": "./pkg"
   },
   "package": {
     "productName": "upKeepify",
@@ -20,8 +19,8 @@
     },
     "bundle": {
       "active": true,
-      "targets": "all",
-      "identifier": "com.tauri.dev",
+      "targets": ["deb", "appimage"],
+      "identifier": "com.upkeepify.app",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
