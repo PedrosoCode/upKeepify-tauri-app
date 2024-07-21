@@ -1,0 +1,15 @@
+[package]
+name = "upkeepify-backend"
+version = "0.1.0"
+edition = "2021"
+
+# Dependencies for the backend
+[dependencies]
+tauri = { version = "1.0", features = ["api-all"] }
+tokio = { version = "1", features = ["full"] }
+sqlx = { version = "0.5", features = ["runtime-tokio-rustls", "postgres"] }
+dotenv = "0.15"
+serde = { version = "1.0", features = ["derive"] }
+
+[build-dependencies]
+tauri-build = "1.0"
